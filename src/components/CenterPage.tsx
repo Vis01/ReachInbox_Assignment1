@@ -42,6 +42,7 @@ const CenterPage: React.FC<Props> = ({ selectedThread }) => {
           },
         }
       );
+      console.log(token);
       setShowDelete(false);
     } catch (error) {
       console.error("Error deleting mail:", error);
@@ -80,7 +81,7 @@ const CenterPage: React.FC<Props> = ({ selectedThread }) => {
             }
           );
           // @ts-ignore
-          setSelectedMail(res.data.data);
+          setSelectedMail(res?.data?.data);
         } catch (error) {
           console.error("Error fetching mail:", error);
         }
@@ -89,11 +90,11 @@ const CenterPage: React.FC<Props> = ({ selectedThread }) => {
           {
             id: 0,
             fromName: "",
-            fromEmail: "jeanne@icloud.com",
+            fromEmail: "Vishnu",
             toName: "",
-            toEmail: "lennon.j@mail.com",
-            subject: "New Product Launch",
-            body: "I would like to introduce you to SaaSgrow, a productized design service specifically tailored for saas startups. Our aim is to help you enhance the user experience and boost the visual appeal of your software products.",
+            toEmail: "Vishnu.j@gmail.com",
+            subject: "",
+            body: "",
             sentAt: "2022-01-01T00:00:00.000Z",
           },
         ]);
@@ -136,6 +137,7 @@ const CenterPage: React.FC<Props> = ({ selectedThread }) => {
       </div>
 
       <div>
+        console.log("")
         {selectedMail.map((mail) => (
           <Mail key={mail.id} {...mail} />
         ))}

@@ -24,16 +24,21 @@ function ThemeToggle() {
     return (
         <div className="mr-10">
             <button
-                className="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white px-3 py-2 rounded-md flex items-center"
+                className={`bg-gray-200 dark:bg-gray-700 relative inline-flex items-center h-7 rounded-full w-14 focus:outline-none`}
                 onClick={() => setDarkMode(!darkMode)}
                 aria-label="Toggle theme"
             >
-                {darkMode ? (
-                    <FaSun className="mr-2" />
-                ) : (
-                    <FaMoon className="mr-2" />
-                )}
-                <span>Toggle Theme</span>
+                <span
+                    className={`${
+                        darkMode ? 'translate-x-6 bg-yellow-500' : 'translate-x-0 bg-blue-500'
+                    } inline-block w-7 h-6 transform rounded-full transition-transform text-xl justify-center items-center `}
+                >
+                    {darkMode ? (
+                        <FaSun className="text-white m-1" />
+                    ) : (
+                        <FaMoon className="text-white m-1" />
+                    )}
+                </span>
             </button>
         </div>
     );
