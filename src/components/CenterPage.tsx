@@ -137,7 +137,6 @@ const CenterPage: React.FC<Props> = ({ selectedThread }) => {
       </div>
 
       <div>
-        console.log("")
         {selectedMail.map((mail) => (
           <Mail key={mail.id} {...mail} />
         ))}
